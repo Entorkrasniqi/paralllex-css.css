@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <title>Parallax Showcase</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+
+      h1,
+      h2 {
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      h2:hover {
+        color: #ffcc00;
+      }
+
+      p {
+        color: #fff;
+        font-size: large;
+      }
+
+      section {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        z-index: 100;
+      }
+
+      .scroll-effect {
+        background-image: url(images/ISS-40.jpg);
+        background-attachment: fixed;
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .text-content {
+        color: #fff;
+        z-index: 2;
+      }
+
+      .info-section {
+        background: #333;
+        color: #fff;
+        padding: 50px;
+        text-align: center;
+        height: 50vh;
+      }
+
+      #main-title {
+        color: white;
+      }
+
+      nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+        background-color: #333;
+        position: fixed;
+        width: 100%;
+        z-index: 100;
+      }
+
+      .highlight {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 5%;
+      }
+
+      #intro {
+        background-image: url(images/ISS-40.jpg);
+        height: 800px;
+        overflow: hidden;
+        background-color: blue;
+      }
+
+      .layer {
+        height: inherit;
+        background-position: bottom center;
+        width: 100%;
+        position: fixed;
+        background-repeat: no-repeat;
+      }
+
+      .layer-astronaut {
+        background-image: url(images/astronaut.png);
+      }
+
+      .layer-shuttle {
+        background-image: url(images/shuttle.png);
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1 id="main-title">Explore the Parallax Effect!</h1>
+    </nav>
+    <div id="intro">
+      <div class="layer layer-astronaut" data-type="parallax" data-speed="10"></div>
+      <div class="layer layer-shuttle" data-type="parallax" data-speed="20"></div>
+      <div class="layer layer3" data-type="parallax" data-speed="30"></div>
+      <div class="layer layer4" data-type="parallax" data-speed="40"></div>
+      <div class="layer layer5" data-type="parallax" data-speed="50"></div>
+      <div class="layer layer6" data-type="parallax" data-speed="100"></div>
+    </div>
+
+    <!-- Parallax Section 1 -->
+    <section class="scroll-effect" id="scroll1">
+      <div class="text-content">
+        <h1>Isn't it amazing?</h1>
+        <p>The background moves at different speeds!</p>
+      </div>
+    </section>
+
+    <!-- Normal content section -->
+    <section class="info-section">
+      <h2 class="highlight">Static Image Above</h2>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut velit
+        inventore tempora repellendus sunt provident laboriosam alias? Saepe,
+        obcaecati neque ullam unde enim, deserunt velit nihil nostrum
+        perferendis in tempore veniam reprehenderit optio nisi adipisci?
+        Inventore, cumque ad at minima reprehenderit ab temporibus non
+        assumenda! Consectetur, a assumenda ipsum quam, impedit at, perferendis
+        iure nam non quisquam quas eos sint minima dolore consequuntur!
+        Expedita, eaque tenetur. At unde cum commodi, ullam, reiciendis
+        necessitatibus odit corporis, quasi maiores nostrum consequuntur libero
+        veritatis nesciunt quisquam id omnis quae tempora amet eum. Voluptatem
+        accusantium placeat necessitatibus! Labore, explicabo doloremque. Sequi
+        aut ducimus corrupti.
+      </p>
+    </section>
+
+    <!-- Parallax Section 2 -->
+    <section class="scroll-effect" id="scroll2">
+      <div class="text-content"></div>
+    </section>
+
+    <!-- More Normal Content -->
+    <section class="info-section">
+      <h2 class="highlight">More Content!</h2>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima
+        sapiente perspiciatis eaque vel, dolore voluptatem debitis modi eveniet
+        quisquam, maxime soluta ratione dolorum aperiam repellat ipsum
+        laboriosam cupiditate deleniti ullam nobis suscipit, commodi distinctio
+        placeat facere? Magni cumque, minima, necessitatibus eos, deserunt alias
+        eaque iste iure non facilis earum maiores? Ea sunt eos voluptate
+        accusamus doloribus voluptatem perspiciatis aperiam deleniti. Fuga
+        dolores voluptate maiores similique sunt expedita cum amet ratione
+        delectus tempore, dolore voluptas quos ipsa nulla minima, aliquid
+        deserunt cupiditate. Quae sunt autem facilis quam, corrupti natus
+        temporibus illum ab ratione incidunt nulla placeat doloribus omnis.
+        Amet, natus eligendi.
+      </p>
+    </section>
+    <script>
+      window.addEventListener("scroll", function (event) {
+        var scrollPosition = this.scrollY;
+        console.log(scrollPosition);
+
+        var parallaxLayers = document.querySelectorAll("[data-type='parallax']");
+        console.log(parallaxLayers);
+
+        var layer, speed, yPos;
+        for (var i = 0; i < parallaxLayers.length; i++) {
+          layer = parallaxLayers[i];
+          speed = layer.getAttribute("data-speed");
+          var yPos = -((scrollPosition * speed) / 100);
+          layer.setAttribute(
+            "style",
+            "transform: translate3d(0px, " + yPos + "px, 0px)"
+          );
+        }
+      });
+    </script>
+  </body>
+</html>
